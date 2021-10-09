@@ -2,6 +2,7 @@ package com.github.henriquemb.noobplugin.events;
 
 import com.github.henriquemb.noobplugin.Model;
 import com.github.henriquemb.noobplugin.NoobPlugin;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -23,6 +24,8 @@ public class QuitPlayerEvent implements Listener {
 
         if (e.getPlayer().hasPermission("noobplugin.silent.quit")) return;
 
-        m.broadcastMessage(Objects.requireNonNull(config.getString("quit-message.message")).trim().replace("%player%", e.getPlayer().getDisplayName()));
+        String message = PlaceholderAPI.setPlaceholders(e.getPlayer(), Objects.requireNonNull(Objects.requireNonNull(config.getString("quit-message.message"))).trim());
+
+        m.broadcastMessage(message);
     }
 }

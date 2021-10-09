@@ -2,6 +2,7 @@ package com.github.henriquemb.noobplugin.events;
 
 import com.github.henriquemb.noobplugin.Model;
 import com.github.henriquemb.noobplugin.NoobPlugin;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -26,6 +27,8 @@ public class JoinPlayerEvent implements Listener {
         if (p.hasPermission("noobplugin.silent.join")) return;
         if (!e.getPlayer().hasPlayedBefore()) return;
 
-        m.broadcastMessage(Objects.requireNonNull(Objects.requireNonNull(config.getString("join-message.message")).replace("%player%", p.getDisplayName())).trim());
+        String message = PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(Objects.requireNonNull(config.getString("join-message.message"))).trim());
+
+        m.broadcastMessage(message);
     }
 }

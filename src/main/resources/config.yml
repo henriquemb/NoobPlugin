@@ -1,11 +1,11 @@
 join-message:
   enable: true
-  message: "&7[&a+&7] &e%player% entrou"
+  message: "&7[&a+&7] &e%player_name% entrou"
 quit-message:
   enable: true
-  message: "&7[&c-&7] &e%player% saiu"
+  message: "&7[&c-&7] &e%player_name% saiu"
 noob-message:
   enable: true
   role: "novato"
   duration: "3h"
-  message: "&d%player% entrou pela primeira vez no servidor, ajude-o."
+  message: "&d%player_name% entrou pela primeira vez no servidor, ajude-o."

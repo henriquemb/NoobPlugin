@@ -2,6 +2,7 @@ package com.github.henriquemb.noobplugin.events;
 
 import com.github.henriquemb.noobplugin.Model;
 import com.github.henriquemb.noobplugin.NoobPlugin;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -29,7 +30,7 @@ public class FirstJoinEvent implements Listener {
 
         final String role = Objects.requireNonNull(config.getString("noob-message.role")).trim();
         final String duration = Objects.requireNonNull(config.getString("noob-message.duration")).trim();
-        final String message = Objects.requireNonNull(config.getString("noob-message.message")).trim();
+        final String message = PlaceholderAPI.setPlaceholders(p, Objects.requireNonNull(Objects.requireNonNull(config.getString("noob-message.message"))).trim());
 
         if (p.hasPermission(String.format("group.%s", role))) return;
 
