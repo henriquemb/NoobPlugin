@@ -1,2 +1,2 @@
 # NoobPlugin
-A plugin for player join message and quit message
+A minecraft plugin for player join message and quit message
