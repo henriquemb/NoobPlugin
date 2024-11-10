@@ -1,3 +1,4 @@
+no-permission: "&cVocê não tem permissão para executar este comando."
 join-message:
   enable: true
   message: "&7[&a+&7] &e%player_name% entrou"

@@ -6,3 +6,6 @@ authors: [ henriquemb ]
 depend:
   - LuckPerms
   - PlaceholderAPI
+commands:
+  noobplugin:
+    usage: /noobplugin
